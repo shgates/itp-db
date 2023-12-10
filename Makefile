@@ -10,7 +10,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SOURCE_FILES))
 
 .PHONY: all clean
 
-all: $(BUILD_DIR) $(EXECUTABLE)
+all: clean $(BUILD_DIR) $(EXECUTABLE)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
@@ -23,3 +23,6 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	rm -rf $(BUILD_DIR) $(EXECUTABLE)
+
+cleandb:
+	rm -rf db/*
